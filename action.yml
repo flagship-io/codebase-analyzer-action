@@ -1,0 +1,32 @@
+name: 'Flagship Flag References'
+description: 'Synchronize references to the Flagship flags in your code with your Flagship account.'
+author: 'Flagship.io'
+inputs:
+  flagshipToken:
+    description: 'Flagship Token to call the Flagship API to synchronize the flag references. You can find it under your account settings in the Flagship platform.'
+    required: true
+  flagshipEnvId:
+    description: 'Flagship Environment ID to call the Flagship API to synchronize the flag references. You can find it under your account settings in the Flagship platform.'
+    required: true
+  repositoryUrl:
+    description: 'Set the base URL of the repository to scan'
+    required: true
+  repositoryBranch:
+    description: 'Set the branch of the repository to scan'
+    required: true
+  directory:
+    description: 'The directory of the code that you want to scan'
+    default: '.'
+  filesToExclude:
+    description: 'comma separated glob patterns that your want to exclude from the analysis'
+    default: '.git'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    FLAGSHIP_TOKEN: ${{ inputs.flagshipToken }}
+    ENVIRONMENT_ID: ${{ inputs.flagshipEnvId }}
+    REPOSITORY_URL: ${{ inputs.repositoryUrl }}
+    REPOSITORY_BRANCH: ${{ inputs.repositoryBranch }}
+    DIRECTORY: ${{ inputs.directory }}
+    FILES_TO_EXCLUDE=: ${{ inputs.filesToExclude }}

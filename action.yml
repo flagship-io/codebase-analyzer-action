@@ -2,11 +2,17 @@ name: 'Flagship Flag References'
 description: 'Synchronize references to the Flagship flags in your code with your Flagship account.'
 author: 'Flagship.io'
 inputs:
-  flagshipToken:
-    description: 'Flagship Token to call the Flagship API to synchronize the flag references. You can find it under your account settings in the Flagship platform.'
+  flagshipClientId:
+    description: 'Flagship Client ID to call the Flagship API to synchronize the flag references. You can find it under your account settings in the Flagship platform.'
+    required: true
+  flagshipClientSecret:
+    description: 'Flagship Client Secret to call the Flagship API to synchronize the flag references. You can find it under your account settings in the Flagship platform.'
     required: true
   flagshipEnvId:
     description: 'Flagship Environment ID to call the Flagship API to synchronize the flag references. You can find it under your account settings in the Flagship platform.'
+    required: true
+  flagshipAccountId:
+    description: 'Flagship Account ID to call the Flagship API to synchronize the flag references. You can find it under your account settings in the Flagship platform.'
     required: true
   repositoryUrl:
     description: 'Set the base URL of the repository to scan'
@@ -24,8 +30,10 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   env:
-    FLAGSHIP_TOKEN: ${{ inputs.flagshipToken }}
+    FLAGSHIP_CLIENT_ID: ${{ inputs.flagshipClientId }}
+    FLAGSHIP_CLIENT_SECRET: ${{ inputs.flagshipClientSecret }}
     ENVIRONMENT_ID: ${{ inputs.flagshipEnvId }}
+    ACCOUNT_ID: ${{ inputs.flagshipAccountId }}
     REPOSITORY_URL: ${{ inputs.repositoryUrl }}
     REPOSITORY_BRANCH: ${{ inputs.repositoryBranch }}
     DIRECTORY: ${{ inputs.directory }}

@@ -4,13 +4,21 @@ This action synchronize Flagship flag references in your codebase to the Flagshi
 
 ## Inputs
 
-### `flagshipToken`
+### `flagshipClientId`
 
-**Required** The API Token for the Flagship Platform. You can create one in the Platform Integration settings of the Flagship Platform.
+**Required** The API Client ID for the Flagship Remote Control API. You can create one in the Settings / Integration settings of the Flagship Platform.
+
+### `flagshipClientSecret`
+
+**Required** The API Client Secret for the Flagship Remote Control API. You can create one in the Settings / Integration settings of the Flagship Platform.
 
 ### `flagshipEnvId`
 
 **Required** The Environment ID in the Flagship Platform. You can get it from the Settings / API & Settings menu on the Flagship Platform.
+
+### `flagshipAccountId`
+
+**Required** The Account ID in the Flagship Platform. You can get it from the Settings / Account menu on the Flagship Platform.
 
 ### `repositoryUrl`
 

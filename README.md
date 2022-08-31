@@ -1,6 +1,9 @@
 # Flagship Flag Reference Action
 
 This action synchronize Flagship flag references in your codebase to the Flagship Platform.
+It uses the Codebase Analyzer provided by Flagship to look for flag usage in your codebase and send line numbers, context and file URL to Flagship, in order to match a flag in the platform to its usage in the code.
+
+More information here: [Codebase Analyzer](https://docs.developers.flagship.io/docs/codebase-analyzer)
 
 ## Inputs
 

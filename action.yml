@@ -1,6 +1,9 @@
 name: 'Flagship Flag References'
 description: 'Synchronize references to the Flagship flags in your code with your Flagship account.'
 author: 'Flagship.io'
+branding:
+  icon: toggle-right
+  color: gray-dark
 inputs:
   flagshipClientId:
     description: 'Flagship Client ID to call the Flagship API to synchronize the flag references. You can find it under your account settings in the Flagship platform.'
